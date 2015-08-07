@@ -1,32 +1,32 @@
-<script>
 
-var guess = undefined;
+var randomNumber = function() {
+  return (Math.floor(Math.random() * 100));
+} 
 
-var randomNumber =function() {
-    	return (Math.floor(Math.random() * 100));
-    	}
+function hotorcold() {  
+  var target = randomNumber();
+  console.log('Target = ' + target);
+  var guess = -1; 
+  while (target != guess) {
+    guess = prompt("Make your guess: ");
 
-function submit(){	
+    if(Math.abs(target - guess) <= 10) {
+      console.log("Very hot");
+    }  if(Math.abs(target - guess) <= 20) {
+      console.log("hot");
+    } else if(Math.abs(target - guess) <= 30) {
+      console.log("warm");
+    } else if(Math.abs(target - guess) <= 50) {
+      console.log("cold");
+    } else if(Math.abs(target - guess) > 50) {
+      console.log("ice cold");
+    } else if(guess === undefined){
+      console.log("Guess a number between 1 and 100");
+    }
+  };
+  console.log("You got it!");
+}
 
-		if (randomNumber === guess){
-			return "You got it!"
-		}else if(Math.abs(randomNumber - guess) <= 10){
-			console.log("Very hot");
-		}else if(Math.abs(randomNumber - guess) <= 20){
-			console.log("hot");
-		}else if(Math.abs(randomNumber - guess) <= 30){
-			console.log("warm");
-		}else if(Math.abs(randomNumber - guess) <= 50){
-			console.log("cold");
-		}else if(Math.abs(randomNumber - guess) > 50){
-			console.log("ice cold");
-		}
-		else if(guess === undefined){
-			console.log("Guess a number between 1 and 100");
-		}
-	};
+  
 
-submit()
-
-</script>
-	
+  
